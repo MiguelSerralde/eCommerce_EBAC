@@ -1,0 +1,174 @@
+$primary-color: #ffd6ff;
+$secondary-color: #f04e30;
+$base-color: #c8b6ff;
+$font-main: 'Lexend', sans-serif;
+
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+@mixin button-style() {
+  background:$base-color;  
+  color: $secondary-color;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 0.8;        
+  }
+}
+
+body {
+  background-color: $primary-color;
+}
+
+.page {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexPrincipal {  
+  flex: 0 0 85%;
+  padding: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;  
+
+  &__icon,
+  &__logo,
+  &__cart {
+    img {
+      width: 30px;
+      height: auto;
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {    
+    gap: 0.5rem;
+  }
+}
+
+.banner {
+  text-align: center;
+  padding: 1rem;
+  background-color: $base-color;  
+
+  &__image {
+    max-width: 150px;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    margin: 0;
+    color: $secondary-color;
+  }
+
+  &__description {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    &__title {
+      font-size: 2rem;
+    }
+  }
+}
+
+.products {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;  
+
+  @media (min-width: $breakpoint-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.product {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;    
+  text-align: center;
+
+  &__image {
+    max-width: 300px;
+    height: 300px;
+    border-radius: 8px;
+  }
+
+  &__title {
+    font-weight: 600;  
+    margin: 0;  
+  }
+
+  &__price {
+    color: $secondary-color;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  &__addCart {
+    @include button-style()
+  }
+}
+
+.cart {    
+  border-top: 2px solid #ddd;
+  box-sizing: border-box;    
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 0.5rem;
+  }
+
+  &__image {
+    width: 50px;
+    border-radius: 5px;
+  }
+
+  &__price {
+    color: $secondary-color;
+  }
+
+  &__delete-icon {
+    width: 20px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: $breakpoint-mobile) {
+    &__title {
+      font-size: 10px;
+    }
+    &__item {      
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__price, &__name {
+      margin: 0;
+      font-size: 10px;
+    }
+  } 
+}
