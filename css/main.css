@@ -1,5 +1,5 @@
 body {
-  background-color: #ffd6ff;
+  background-color: #e9e9e9;
 }
 
 .page {
@@ -14,14 +14,16 @@ body {
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   align-items: center;
-  padding: 1rem;
+  padding-left: 1rem;
 }
 .header__icon img, .header__logo img, .header__cart img {
   width: 30px;
   height: auto;
   cursor: pointer;
+  padding: 15px;
+  padding-bottom: 0;
 }
 @media (max-width: 480px) {
   .header {
@@ -103,6 +105,7 @@ body {
 }
 
 .cart {
+  padding-top: 30px;
   border-top: 2px solid #ddd;
   box-sizing: border-box;
 }
@@ -123,6 +126,7 @@ body {
 }
 .cart__price {
   color: #f04e30;
+  border: 1px solid black;
 }
 .cart__delete-icon {
   width: 20px;

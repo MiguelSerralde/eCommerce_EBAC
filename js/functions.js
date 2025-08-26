@@ -1,31 +1,43 @@
 const showCart = document.querySelector(".header__cart")
 showCart.addEventListener("click", () => {
-    showHideCart()
+    const initUnit = 1
+    showHideCart(1)
 })
 
-function showHideCart() {
+function showHideCart(num) {
     const cart = document.querySelector(".cart")
     const flexPrincipal = document.querySelector(".flexPrincipal")
-    if (cart.style.display == 'none') {
+    const items = document.querySelectorAll(".cart__item") 
+    
+    if (cart.style.display == 'none' && items.length>0) {
         cart.style.display = 'block'
         flexPrincipal.style.flex ="0 0 85%"
     } else{
         cart.style.display = 'none'
-        flexPrincipal.style.flex = "0 0 100%"
+        flexPrincipal.style.flex = "0 0 99%"
     }    
 }
 
 const btnDeleteArtCart = document.querySelectorAll(".cart__delete")
 btnDeleteArtCart.forEach(button => {
-    button.addEventListener("click",() => {        
+    button.addEventListener("click",() => {         
     deleteElementCart(button)
 })
 })
 
 function deleteElementCart(button){
     button.closest(".cart__item").remove()
+    checkCartEmpty()
 }
 
+function checkCartEmpty(){
+    const items = document.querySelectorAll(".cart__item")  
+    const clickCart = document.querySelector(".header__cart")  
+    if (items.length === 0) {
+        console.log("vacio")
+        clickCart.click()                
+    } 
+}
 const addCartElement = document.querySelectorAll(".product__addCart")
 addCartElement.forEach(button => {
     button.addEventListener("click",() => {
