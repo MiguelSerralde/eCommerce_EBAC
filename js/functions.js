@@ -10,7 +10,7 @@ function showHideCart(num) {
     const items = document.querySelectorAll(".cart__item") 
     
     if (cart.style.display == 'none' && items.length>0) {
-        cart.style.display = 'block'
+        cart.style.display = 'block'        
         flexPrincipal.style.flex ="0 0 80%"
     } else{
         cart.style.display = 'none'
