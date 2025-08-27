@@ -24,7 +24,7 @@ body {
 
 .header {
   display: flex;
-  justify-content: right;
+  justify-content: left;
   align-items: center;
   padding-left: 1rem;
 }

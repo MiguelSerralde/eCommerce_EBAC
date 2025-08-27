@@ -11,11 +11,34 @@
   <script src="./js/functions.js" defer></script>
 </head>
 <body class="page">
+  <div class="cart">
+        <h2 class="cart__title"></h2>
+        <div class="cart__item">
+          <div class="cart__image-wrappper">
+            <img class="cart__image" src="./img/KC_Cover.jpg" alt="">
+            <span class="cart__counter">1</span>
+          </div>
+          <p class="cart__price">$400</p>
+          <p class="cart__name">Kingdom Come</p>
+          <i class="cart__delete"><img src="./img/bin.png" alt="Eliminar" class="cart__delete-icon"></i>
+        </div>
+        <div class="cart__item">
+          <div class="cart__image-wrappper">
+            <img class="cart__image" src="./img/amazingfantasy1.jpg" alt="">
+            <span class="cart__counter">1</span>
+          </div>    
+          <p class="cart__price">$709.00</p>
+          <p class="cart__name">Amazing Fantasy #15</p>
+          <i class="cart__delete"><img src="./img/bin.png" alt="Eliminar" class="cart__delete-icon"></i>
+        </div>
+  </div>
   <div class="flexPrincipal">
     <header class="header">
+      <div>
+        <i class="header__cart"><img src="./img/carrito.png" alt="Icono carrito"></i>
+      </div>
       <i class="header__icon"><img src="./img/menu.png" alt="Icono menú"></i>
-      <i class="header__logo"><img src="./img/JusticeLeague.png" alt="Logo"></i>
-      <i class="header__cart"><img src="./img/carrito.png" alt="Icono carrito"></i>
+      <i class="header__logo"><img src="./img/JusticeLeague.png" alt="Logo"></i>           
     </header>    
     <main class="main">
       <section class="banner">
@@ -70,27 +93,6 @@
         </article>
       </section>      
     </main>   
-  </div>
-  <div class="cart">
-        <h2 class="cart__title"></h2>
-        <div class="cart__item">
-          <div class="cart__image-wrappper">
-            <img class="cart__image" src="./img/KC_Cover.jpg" alt="">
-            <span class="cart__counter">1</span>
-          </div>
-          <p class="cart__price">$400</p>
-          <p class="cart__name">Kingdom Come</p>
-          <i class="cart__delete"><img src="./img/bin.png" alt="Eliminar" class="cart__delete-icon"></i>
-        </div>
-        <div class="cart__item">
-          <div class="cart__image-wrappper">
-            <img class="cart__image" src="./img/amazingfantasy1.jpg" alt="">
-            <span class="cart__counter">1</span>
-          </div>    
-          <p class="cart__price">$709.00</p>
-          <p class="cart__name">Amazing Fantasy #15</p>
-          <i class="cart__delete"><img src="./img/bin.png" alt="Eliminar" class="cart__delete-icon"></i>
-        </div>
-  </div>
+  </div>  
 </body>
 </html>
