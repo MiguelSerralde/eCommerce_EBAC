@@ -41,7 +41,7 @@ body {
 }
 .header__wrapper .header__counter {
   position: relative;
-  left: -20px;
+  left: -23px;
   bottom: 2px;
   right: 2px;
   background: #f04e30;
@@ -88,11 +88,6 @@ body {
   grid-template-columns: 1fr;
   gap: 1rem;
   padding: 1rem;
-}
-@media (min-width: 768px) {
-  .products {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 @media (min-width: 1024px) {
   .products {
@@ -188,11 +183,15 @@ body {
   cursor: pointer;
 }
 @media (max-width: 480px) {
+  .cart {
+    flex-direction: row;
+  }
   .cart__title {
     font-size: 10px;
   }
   .cart__item {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
     align-items: flex-start;
   }
   .cart__price, .cart__name {
