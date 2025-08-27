@@ -29,12 +29,15 @@ function deleteElementCart(button){
     
     const carItem = button.closest(".cart__item")
     const counterSpam = carItem.querySelector(".cart__counter").textContent
-    if (counterSpam == 1){
-        button.closest(".cart__item").remove()    
+    const cartIconcount = document.querySelector(".header__counter").textContent
+    document.querySelector(".header__counter").textContent = parseInt(cartIconcount) - 1
+    if (counterSpam == 1){        
+        button.closest(".cart__item").remove()            
     }  
-    else {
+    else {        
         console.log("menos uno") 
         carItem.querySelector(".cart__counter").textContent = parseInt(counterSpam) - 1       
+        document.querySelector(".header__counter").textContent = parseInt(cartIconcount) - 1
     }
     
     checkCartEmpty()
@@ -59,8 +62,8 @@ addCartElement.forEach(button => {
         let found = false
 
         cartItem.forEach(cartItem => {
-        const nameInCart = cartItem.querySelector(".cart__name").textContent;
-
+        const nameInCart = cartItem.querySelector(".cart__name").textContent;        
+              
         if (nameInCart === itemName) {
             found = true;
 
@@ -71,10 +74,18 @@ addCartElement.forEach(button => {
             counter.textContent = "1";
             cartItem.appendChild(counter);
             }
-            counter.textContent = parseInt(counter.textContent) + 1;            
+            counter.textContent = parseInt(counter.textContent) + 1;        
+            //Aumentar el contador del carrito
+            const cartCounter = document.querySelector(".header__counter").textContent
+            document.querySelector(".header__counter").textContent = parseInt(cartCounter) + 1
         }
         });
         if (!found) {
+            //Aumentar el contador del carrito
+            const cartCounter = document.querySelector(".header__counter").textContent
+            document.querySelector(".header__counter").textContent = parseInt(cartCounter) + 1
+
+            //Agregar elementos al carrito
             const addDivItem = document.createElement("div")
             addDivItem.setAttribute("class", "cart__item")
             const addDivWrapper = document.createElement("div")
