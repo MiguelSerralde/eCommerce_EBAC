@@ -53,7 +53,7 @@ function deleteElementCart(button){
 
 function checkCartEmpty(){
     const items = document.querySelectorAll(".cart__item")  
-    const clickCart = document.querySelector(".header__icon")  
+    const clickCart = document.querySelector(".cart__icon-close")  
     if (items.length === 0) {        
         clickCart.click()                
     } 
