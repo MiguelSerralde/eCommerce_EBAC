@@ -1,10 +1,17 @@
-const showCart = document.querySelector(".header__cart")
-showCart.addEventListener("click", () => {
-    const initUnit = 1
-    showHideCart(1)
+const showCart = document.querySelector(".header__icon")
+showCart.addEventListener("click", () => {    
+    showHideCart()
 })
 
-function showHideCart(num) {
+const btnClose = document.querySelector(".cart__icon-close")
+btnClose.addEventListener("click", () => {
+    document.querySelector(".cart").style.display = "none"
+    document.querySelector(".flexPrincipal").style.flex = "0 0 99%"
+    //showHideCart()
+})
+
+
+function showHideCart() {
     const cart = document.querySelector(".cart")
     const flexPrincipal = document.querySelector(".flexPrincipal")
     const items = document.querySelectorAll(".cart__item") 
@@ -12,9 +19,10 @@ function showHideCart(num) {
     if (cart.style.display == 'none' && items.length>0) {
         cart.style.display = 'block'        
         flexPrincipal.style.flex ="0 0 80%"
-    } else{
-        cart.style.display = 'none'
-        flexPrincipal.style.flex = "0 0 99%"
+    } else{        
+        //Cerrar Carrito
+        //cart.style.display = 'none'
+        //flexPrincipal.style.flex = "0 0 99%"
     }    
 }
 
@@ -45,7 +53,7 @@ function deleteElementCart(button){
 
 function checkCartEmpty(){
     const items = document.querySelectorAll(".cart__item")  
-    const clickCart = document.querySelector(".header__cart")  
+    const clickCart = document.querySelector(".header__icon")  
     if (items.length === 0) {        
         clickCart.click()                
     } 
@@ -126,7 +134,7 @@ addCartElement.forEach(button => {
         //Si esta vacio abre el Carrito de compras al ingresar un articulo nuevo
         const emptyCart = document.querySelectorAll(".cart__item")   
         const counter = document.querySelector(".cart__counter").textContent                    
-        const clickIn = document.querySelector(".header__cart")                  
+        const clickIn = document.querySelector(".header__icon")                  
         if (emptyCart.length ===1 && counter == 1) {            
             clickIn.click()            
         }
