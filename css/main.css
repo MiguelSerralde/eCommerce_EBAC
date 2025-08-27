@@ -182,16 +182,13 @@ body {
   width: 20px;
   cursor: pointer;
 }
-@media (max-width: 480px) {
-  .cart {
-    flex-direction: row;
-  }
+@media (max-width: 640px) {
   .cart__title {
     font-size: 10px;
   }
   .cart__item {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
   }
   .cart__price, .cart__name {
